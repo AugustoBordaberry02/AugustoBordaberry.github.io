@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foro de Conversación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      background-image: url('https://elordenmundial.com/wp-content/uploads/2020/08/CIA_FBI_POLITICA_ESTADOS_UNIDOS_INTELIGENCIA-e1597128861904.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    #messages {
+      height: 300px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .message {
+      margin-bottom: 10px;
+    }
+    
+    .username {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  </style>
+  <script>
+    function sendMessage() {
+      var username = document.getElementById("usernameInput").value;
+      var message = document.getElementById("messageInput").value;
+      var messagesContainer = document.getElementById("messages");
+      var newMessageElement = document.createElement("p");
+      newMessageElement.classList.add("message");
+      newMessageElement.innerHTML = '<span class="username">' + username + ':</span> ' + message;
+      messagesContainer.appendChild(newMessageElement);
+      document.getElementById("messageInput").value = "";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>CONSEJO DE ESTADO</h1>
+  
+    <div id="messages"></div>
+  
+    <input type="text" id="usernameInput" placeholder="Nombre de usuario" />
+    <input type="text" id="messageInput" placeholder="Escribe un mensaje..." />
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+</body>
+</html>
